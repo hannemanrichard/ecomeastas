@@ -360,8 +360,8 @@ function EditLeadForm({
                   <InputLabel>Commune</InputLabel>
                   <Select value={commune} label="Commune" onChange={(e) => setCommune(e.target.value)}>
                     {communes.map((com, i) => (
-                      <MenuItem key={i} value={com.value} disabled={!com.isDeliverable}>
-                        {com.label} {!com.isDeliverable && '(Undeliverable)'}
+                      <MenuItem key={i} value={com.value} disabled={!isStopDesk && !com.isDeliverable}>
+                        {com.label} {!isStopDesk && !com.isDeliverable && '(Undeliverable)'}
                       </MenuItem>
                     ))}
                   </Select>
